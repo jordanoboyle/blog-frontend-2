@@ -29,47 +29,59 @@ function PostsIndex (props) {
   console.log("The props are", props)
   return (
     <div id="posts-index">
+      
       <h1>All posts</h1>
       <div className="posts">
         <h2>Game 1</h2>
-        <p>This is the test: {props.name}</p>
         <p>Date: month day year</p>
         <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1708091/capsule_616x353.jpg?t=1706638660"/>
         <p>
           Here is some information about Halo Infinite!
         </p>
-        <button className="button1" type="button">Gameplay</button>
-        <h2>Super Contra</h2>
-        <p>Date: month day year</p>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbE3qwmloOV1eCR6WLcjSlD5kk36DftHQ-EQ&s"/>
-        <p>
-          Here is some information about contra
-        </p>
+        <button className="button1" type="button">View Gameplay</button>
       </div>
     </div>
   )
 }
 function Footer () {
+  
   return (
     <footer>
       <p>Copyright 20XX</p>
       <p>Content from many contributors</p>
       <p>Site by: Jordan O'Boyle</p>
+      <p>Passing data: </p>
     </footer>
   )
 }
 
 function Content () {
-  let name = "BRIAN TEST"
+  let posts = [
+    {
+      id: 1,
+      title: "Game 1",
+      date: "Date: month day year",
+      body: "ttps://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1708091/capsule_616x353.jpg?t=1706638660",
+      image: "Here is some information about Halo Infinite!",
+    },
+    {
+      id: 2,
+      title: "Super Contra",
+      date: "Date: month day year",
+      body: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbE3qwmloOV1eCR6WLcjSlD5kk36DftHQ-EQ&s",
+      image: "Here is some information about contra",
+    }
+  ]
   return (
     <div>
       <NewPosts />
-      <PostsIndex name={name}/>
+      <PostsIndex posts={posts}/>
     </div>
   )
 }
 
 function App() {
+  let testOne = "Let's put this through"
   return (
     <div>
      <Header />
