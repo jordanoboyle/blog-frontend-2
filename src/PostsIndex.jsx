@@ -7,13 +7,14 @@ export function PostsIndex(props) {
       {props.posts.map(post => (
         <div key={post.id} className="posts">
           <h2>{post.title}</h2>
+          <p>{post.id}</p>
           <p>{post.date}</p>
           <img src={post.image} />
           <p>
             {post.body}
           </p>
           <button className="button1" type="button">View Gameplay</button>
-          <button onClick={props.onShowPost}> Show MODAL </button>
+          <button onClick={() => {props.onShowPost(post)}}> Show MODAL INFO </button> {/* aha moment, here we have accessing each individual post here from the API. This is getting passed to CONTENT XXX*/}
         </div>
       ))}
       </div>
