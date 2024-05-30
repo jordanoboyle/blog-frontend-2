@@ -2,6 +2,9 @@ import { NewPosts } from "./NewPosts";
 import { PostsIndex } from "./PostsIndex";
 
 export function Content() {
+  const handlesIndexPosts = () => {
+    console.log("GET That DATA!")
+  }
   let posts = [
     {
       id: 1,
@@ -21,6 +24,10 @@ export function Content() {
   return (
     <div>
       <NewPosts />
+      <br></br>
+      <button title="PressHere" onClick={handlesIndexPosts}>
+        BIG RED BUTTON
+      </button>
       <PostsIndex posts={posts} />
     </div>
   );
