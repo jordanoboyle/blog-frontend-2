@@ -9,15 +9,15 @@ function NewPosts () {
   return (
       <div id="posts-new">
         <h1>New post</h1>
-        <form>
+        <form id="idForm">
           <div>
-            Post Title: <input type="text"/>
+            Post Title: <input type="text" id="logPostTitle"/>
           </div>
           <div>
-            Date Entry: <input type="text" />
+            Date Entry: <input type="text" id="logPostDate" />
           </div>
           <div>
-            Record Game Data Here: <input type="text" />
+            Record Game Data Here: <input type="text" id="logPost"/>
           </div>
           <button type="submit">SAVE YOUR GAME</button>
         </form>
@@ -25,12 +25,14 @@ function NewPosts () {
   )
 }
 
-function PostsIndex () {
+function PostsIndex (props) {
+  console.log("The props are", props)
   return (
     <div id="posts-index">
       <h1>All posts</h1>
       <div className="posts">
         <h2>Game 1</h2>
+        <p>This is the test: {props.name}</p>
         <p>Date: month day year</p>
         <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1708091/capsule_616x353.jpg?t=1706638660"/>
         <p>
@@ -58,10 +60,11 @@ function Footer () {
 }
 
 function Content () {
+  let name = "BRIAN TEST"
   return (
     <div>
       <NewPosts />
-      <PostsIndex />
+      <PostsIndex name={name}/>
     </div>
   )
 }
