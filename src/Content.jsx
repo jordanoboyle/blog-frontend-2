@@ -30,8 +30,8 @@ export function Content() {
       <button title="PressHere" onClick={handlesIndexPosts}>
         BIG RED BUTTON
       </button>
-      <PostsIndex posts={posts} onShowPost={handleShowPost} />
-      <Modal show={isPostsShowVisible}>
+      <PostsIndex posts={posts} onShowPost={handleShowPost}/>
+      <Modal show={isPostsShowVisible} onClose={handleClose}> {/*This is where the close button needs to be*/}
         <p>THIS IS TESTING SOME STUFF</p>
       </Modal>
     </div>
