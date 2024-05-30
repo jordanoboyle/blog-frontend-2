@@ -13,6 +13,7 @@ export function PostsIndex(props) {
             {post.body}
           </p>
           <button className="button1" type="button">View Gameplay</button>
+          <button onClick={props.onShowPost}>Show MODAL</button>
         </div>
       ))}
       </div>
