@@ -54,7 +54,15 @@ function Footer () {
       <p>Content from many contributors</p>
       <p>Site by: Jordan O'Boyle</p>
     </footer>
+  )
+}
 
+function Content () {
+  return (
+    <div>
+      <NewPosts />
+      <PostsIndex />
+    </div>
   )
 }
 
@@ -62,8 +70,7 @@ function App() {
   return (
     <div>
      <Header />
-     <NewPosts />
-     <PostsIndex />
+     <Content />
      <Footer />
     </div>
   );
