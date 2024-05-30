@@ -4,21 +4,14 @@ import { useState } from "react";
 import axios from "axios";
 
 export function Content() {
+  const [posts, setPosts] = useState([]);
   const handlesIndexPosts = () => {
-    axios.get('http://localhost:3000/posts.json')
-  .then(function (response) {
+    axios.get('http://localhost:3000/posts.json').then(response => {
     // handle success
     console.log(response);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .finally(function () {
-    // always executed
+    setPosts(response.data)
   });
   }
-  let posts = [];
   return (
     <div>
       <NewPosts />
